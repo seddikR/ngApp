@@ -1,0 +1,38 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "supplier",
+            "otherEntityName": "supplier",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "adressId",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "adress",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "city",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "country",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "zipCode",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170313181128",
+    "entityTableName": "address",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl"
+}

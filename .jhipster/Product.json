@@ -1,0 +1,41 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "supplier",
+            "otherEntityName": "supplier",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "category",
+            "otherEntityName": "category",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "productId",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "productName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "productDescription",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "productImage",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "image"
+        }
+    ],
+    "changelogDate": "20170313181128",
+    "entityTableName": "product",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl"
+}

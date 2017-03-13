@@ -1,0 +1,36 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "address",
+            "otherEntityName": "address",
+            "otherEntityRelationshipName": "supplier"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "product",
+            "otherEntityName": "product",
+            "otherEntityRelationshipName": "supplier"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "supplierId",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "companyName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "contactName",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170313181128",
+    "entityTableName": "supplier",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl"
+}

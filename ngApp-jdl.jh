@@ -1,0 +1,49 @@
+entity Product {
+	productId Integer
+    productName String
+    productDescription String
+    productImage ImageBlob
+}
+
+entity Category {
+	categoryId Integer
+    categoryName String
+    description String
+    picture ImageBlob
+}
+
+entity Supplier {
+	supplierId Integer
+    companyName String 
+    contactName String
+}
+
+entity Address {
+	adressId Integer
+    adress String  
+    city String
+    country String
+    zipCode String
+}
+
+
+relationship OneToMany {
+  Supplier{address} to Address{supplier}
+}
+
+relationship OneToMany {
+  Supplier{product} to Product{supplier}
+}
+
+
+relationship OneToMany {
+  Category{product} to Product{category}
+}
+
+
+
+dto * with mapstruct
+service all with serviceImpl
+
+
+

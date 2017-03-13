@@ -1,0 +1,35 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "product",
+            "otherEntityName": "product",
+            "otherEntityRelationshipName": "category"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "categoryId",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "categoryName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "description",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "picture",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "image"
+        }
+    ],
+    "changelogDate": "20170313181128",
+    "entityTableName": "category",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl"
+}
