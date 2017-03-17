@@ -45,20 +45,7 @@ will generate few files:
    create src/main/webapp/app/my-component/my-component.component.ts
    update src/main/webapp/app/app.module.ts
 
-## Building for production
 
-To optimize the ngApp application for production, run:
-
-    ./gradlew -Pprod clean bootRepackage
-
-This will concatenate and minify the client CSS and JavaScript files. It will also modify `index.html` so it references these new files.
-To ensure everything worked, run:
-
-    java -jar build/libs/*.war
-
-Then navigate to [http://localhost:8080](http://localhost:8080) in your browser.
-
-Refer to [Using JHipster in production][] for more details.
 
 ## Testing
 
@@ -76,27 +63,6 @@ Unit tests are run by [Karma][] and written with [Jasmine][]. They're located in
 
 For more information, refer to the [Running tests page][].
 
-## Using Docker to simplify development (optional)
-
-You can use Docker to improve your JHipster development experience. A number of docker-compose configuration are available in the `src/main/docker` folder to launch required third party services.
-For example, to start a mysql database in a docker container, run:
-
-    docker-compose -f src/main/docker/mysql.yml up -d
-
-To stop it and remove the container, run:
-
-    docker-compose -f src/main/docker/mysql.yml down
-
-You can also fully dockerize your application and all the services that it depends on.
-To achieve this, first build a docker image of your app by running:
-
-    ./gradlew bootRepackage -Pprod buildDocker
-
-Then run:
-
-    docker-compose -f src/main/docker/app.yml up -d
-
-For more information refer to [Using Docker and Docker-Compose][], this page also contains information on the docker-compose sub-generator (`yo jhipster:docker-compose`), which is able to generate docker configurations for one or several JHipster applications.
 
 
 
