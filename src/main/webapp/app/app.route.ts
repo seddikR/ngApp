@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Resolve, ActivatedRouteSnapshot, RouterStateSnapshot, Route } from '@angular/router';
+import {Resolve, ActivatedRouteSnapshot, RouterStateSnapshot, Route, Routes} from '@angular/router';
+import {CategoryComponent} from './category/category.component'
 
 
 /* import { AuthService } from './shared';
@@ -14,6 +15,15 @@ export class AuthorizeResolve implements Resolve<any> {
   }
 } */
 
-export const navbarRoute: Route = {
+export const NavbarRoute: Routes = [
+    { path: 'categories',
+        component: CategoryComponent,
 
-  };
+
+  },
+
+    { path: '',
+        redirectTo: '/categories',
+        pathMatch: 'full'
+    },
+  ];

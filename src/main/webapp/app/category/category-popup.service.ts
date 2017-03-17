@@ -40,5 +40,6 @@ export class CategoryPopupService {
             this.isOpen = false;
         });
         return modalRef;
+
     }
 }

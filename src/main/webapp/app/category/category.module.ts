@@ -1,6 +1,8 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+
 
 
 
@@ -12,6 +14,12 @@ import {
 
     categoryRoute,
     categoryPopupRoute,
+
+    CategoryDialogComponent,
+    CategoryPopupComponent
+
+
+
 } from './';
 
 let ENTITY_STATES = [
@@ -21,11 +29,16 @@ let ENTITY_STATES = [
 
 @NgModule({
     imports: [
-        RouterModule.forRoot(ENTITY_STATES, { useHash: true }),
-        CommonModule
+        //RouterModule.forRoot(ENTITY_STATES, { useHash: true }),
+        RouterModule.forRoot(categoryPopupRoute),
+        CommonModule,
+        FormsModule
+
     ],
     declarations: [
-        CategoryComponent
+        CategoryComponent,
+        CategoryDialogComponent,
+        CategoryPopupComponent
     ],
     entryComponents: [
         CategoryComponent
@@ -33,7 +46,7 @@ let ENTITY_STATES = [
     exports: [CategoryComponent],
     providers: [
         CategoryService,
-        CategoryPopupService,
+        CategoryPopupService
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

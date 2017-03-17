@@ -7,7 +7,11 @@ import {AppComponent} from './app.component';
 import {NgAppCategoryModule} from './category/category.module';
 
 import { HttpModule } from '@angular/http';
+import {NavbarRoute} from './app.route';
 
+import { RouterModule } from '@angular/router';
+
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -15,9 +19,13 @@ import { HttpModule } from '@angular/http';
 
 @NgModule({
     imports: [
+        RouterModule.forRoot(NavbarRoute),
         BrowserModule,
+        FormsModule,
+
         NgAppCategoryModule,
     ],
+
     declarations: [
         AppComponent
     ],
@@ -28,4 +36,6 @@ import { HttpModule } from '@angular/http';
 
     //schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
+
+
 export class NgAppAppModule {}
