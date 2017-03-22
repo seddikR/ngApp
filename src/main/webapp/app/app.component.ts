@@ -20,6 +20,10 @@ import { Component } from '@angular/core';
     </div>
   </div>
   
+ <div class="footer">
+    <p>This is your footer</p>
+</div>
+<template ngbModalContainer></template>
   
   
   

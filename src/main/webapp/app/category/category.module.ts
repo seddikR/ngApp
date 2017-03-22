@@ -3,34 +3,24 @@ import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
-
-
-
-
 import {
     CategoryService,
     CategoryPopupService,
     CategoryComponent,
 
-    categoryRoute,
     categoryPopupRoute,
 
     CategoryDialogComponent,
     CategoryPopupComponent
 
-
-
 } from './';
 
-let ENTITY_STATES = [
-    ...categoryRoute,
-    ...categoryPopupRoute,
-];
 
 @NgModule({
     imports: [
-        //RouterModule.forRoot(ENTITY_STATES, { useHash: true }),
+
         RouterModule.forRoot(categoryPopupRoute),
+
         CommonModule,
         FormsModule
 
@@ -41,7 +31,8 @@ let ENTITY_STATES = [
         CategoryPopupComponent
     ],
     entryComponents: [
-        CategoryComponent
+        CategoryComponent,
+        CategoryDialogComponent
     ],
     exports: [CategoryComponent],
     providers: [

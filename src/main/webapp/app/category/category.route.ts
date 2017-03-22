@@ -1,7 +1,5 @@
-import { Injectable } from '@angular/core';
-import { Resolve, ActivatedRouteSnapshot, RouterStateSnapshot, Routes, CanActivate } from '@angular/router';
 
-import { PaginationUtil } from 'ng-jhipster';
+import { Routes } from '@angular/router';
 
 import { CategoryComponent } from './category.component';
 import {CategoryPopupComponent} from './category-dialog.component'

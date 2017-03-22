@@ -1,8 +1,6 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Response } from '@angular/http';
-import { ActivatedRoute, Router } from '@angular/router';
-import { Subscription } from 'rxjs/Rx';
-import { EventManager, ParseLinks, PaginationUtil, AlertService, DataUtils } from 'ng-jhipster';
+
 
 import { Category } from './category.model';
 import { CategoryService } from './category.service';
@@ -12,16 +10,13 @@ import { CategoryService } from './category.service';
     selector: 'category',
     templateUrl: './category.component.html'
 })
-export class CategoryComponent implements OnInit, OnDestroy {
+export class CategoryComponent implements OnInit {
 categories: Category[];
-    //currentAccount: any;
-    eventSubscriber: Subscription;
+
 
     constructor(
         private categoryService: CategoryService,
-        //private alertService: AlertService,
-        //private dataUtils: DataUtils,
-        //private eventManager: EventManager,
+
 
     ) {
     }
@@ -31,38 +26,13 @@ categories: Category[];
             (res: Response) => {
                 this.categories = res.json();
             },
-            (res: Response) => this.onError(res.json())
+
         );
     }
     ngOnInit() {
         this.loadAll();
-
-        this.registerChangeInCategories();
-    }
-
-    ngOnDestroy() {
-        //this.eventManager.destroy(this.eventSubscriber);
-    }
-
-    trackId (index: number, item: Category) {
-        return item.id;
     }
 
 
 
-    byteSize(field) {
-        //return this.dataUtils.byteSize(field);
-    }
-
-    openFile(contentType, field) {
-        //return this.dataUtils.openFile(contentType, field);
-    }
-    registerChangeInCategories() {
-        //this.eventSubscriber = this.eventManager.subscribe('categoryListModification', (response) => this.loadAll());
-    }
-
-
-    private onError (error) {
-        //this.alertService.error(error.message, null, null);
-    }
 }

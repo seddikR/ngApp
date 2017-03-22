@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Http, Response, URLSearchParams, BaseRequestOptions } from '@angular/http';
 import { Observable } from 'rxjs/Rx';
+import 'rxjs/Rx';
 
 import { Category } from './category.model';
 @Injectable()

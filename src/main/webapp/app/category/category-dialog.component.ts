@@ -2,8 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Response } from '@angular/http';
 
-import { NgbModal, NgbActiveModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
-import { EventManager, AlertService, DataUtils } from 'ng-jhipster';
+import { NgbActiveModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 
 import { Category } from './category.model';
 import { CategoryPopupService } from './category-popup.service';
@@ -22,40 +21,18 @@ export class CategoryDialogComponent implements OnInit {
     //products: Product[];
     constructor(
         public activeModal: NgbActiveModal,
-        //private dataUtils: DataUtils,
-        //private alertService: AlertService,
         private categoryService: CategoryService,
-        //private productService: ProductService,
-        //private eventManager: EventManager
+
     ) {
     }
 
     ngOnInit() {
         this.isSaving = false;
-        this.authorities = ['ROLE_USER', 'ROLE_ADMIN'];
 /*        this.productService.query().subscribe(
             (res: Response) => { this.products = res.json(); }, (res: Response) => this.onError(res.json()));*/
     }
-    byteSize(field) {
-        //return this.dataUtils.byteSize(field);
-    }
 
-    openFile(contentType, field) {
-        //return this.dataUtils.openFile(contentType, field);
-    }
 
-    setFileData($event, category, field, isImage) {
-        if ($event.target.files && $event.target.files[0]) {
-            let $file = $event.target.files[0];
-            if (isImage && !/^image\//.test($file.type)) {
-                return;
-            }
-/*            this.dataUtils.toBase64($file, (base64Data) => {
-                category[field] = base64Data;
-                category[`${field}ContentType`] = $file.type;
-            });*/
-        }
-    }
     clear () {
         this.activeModal.dismiss('cancel');
     }
@@ -72,23 +49,15 @@ export class CategoryDialogComponent implements OnInit {
     }
 
     private onSaveSuccess (result: Category) {
-        //this.eventManager.broadcast({ name: 'categoryListModification', content: 'OK'});
         this.isSaving = false;
         this.activeModal.dismiss(result);
     }
 
     private onSaveError (error) {
         this.isSaving = false;
-        this.onError(error);
+
     }
 
-    private onError (error) {
-        //this.alertService.error(error.message, null, null);
-    }
-
-/*    trackProductById(index: number, item: Product) {
-        return item.id;
-    }*/
 }
 
 @Component({
